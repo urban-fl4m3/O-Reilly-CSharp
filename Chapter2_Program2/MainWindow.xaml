@@ -18,10 +18,10 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button x:Name="button1" Grid.Column="0" Grid.Row="0" Width="100" Height="50" Content="Show a message"></Button>
-        <Button x:Name="button2" Grid.Column="1" Grid.Row="0" Width="100" Height="50" Content="If/Else"></Button>
-        <Button x:Name="button3" Grid.Column="0" Grid.Row="1" Width="200" Height="50" Content="Another conditional test"></Button>
-        <Button x:Name="button4" Grid.Column="1" Grid.Row="1" Width="100" Height="50" Content="A loop"></Button>
+        <Button x:Name="button1" Grid.Column="0" Grid.Row="0" Width="100" Height="50" Content="Show a message" Click="button1_Click"></Button>
+        <Button x:Name="button2" Grid.Column="1" Grid.Row="0" Width="100" Height="50" Content="If/Else" Click="button2_Click"></Button>
+        <Button x:Name="button3" Grid.Column="0" Grid.Row="1" Width="200" Height="50" Content="Another conditional test" Click="button3_Click"></Button>
+        <Button x:Name="button4" Grid.Column="1" Grid.Row="1" Width="100" Height="50" Content="A loop" Click="button4_Click"></Button>
         <TextBlock x:Name="myLabel" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
     </Grid>
 </Window>
