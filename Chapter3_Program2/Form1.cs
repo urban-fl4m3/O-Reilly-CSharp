@@ -50,5 +50,19 @@ namespace Chapter3_Program2
             bank += bob.GiveCash(5);
             UpdateForm();
         }
+
+        private void joeGivesCashToBobButton_Click(object sender, EventArgs e)
+        {
+            var cash = joe.GiveCash(10);
+            bob.ReceiveCash(cash);
+            UpdateForm();
+        }
+
+        private void bobGivesCashToJoeButton_Click(object sender, EventArgs e)
+        {
+            var cash = bob.GiveCash(5);
+            joe.ReceiveCash(cash);
+            UpdateForm();
+        }
     }
 }
