@@ -35,6 +35,7 @@ namespace Chapter4_Program3
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Lloyd.SpeakTo(Lucinda, "Hello");
             Lloyd = Lucinda;
             Lloyd.EarSize = 4321;
             Lloyd.WhoAmI();
