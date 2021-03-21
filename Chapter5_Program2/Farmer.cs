@@ -19,5 +19,11 @@
                 BagsOfFeed = numberOfCows * FeedMultiplier;
             }
         }
+
+        public Farmer(int numberOfCows, int feedMultiplier)
+        {
+            this.feedMultiplier = feedMultiplier;
+            NumberOfCows = numberOfCows;
+        }
     }
 }

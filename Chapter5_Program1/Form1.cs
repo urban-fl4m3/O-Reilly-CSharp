@@ -5,7 +5,6 @@ namespace Chapter5_Program1
 {
     public partial class Form1 : Form
     {
-        //page 234
         DinnerParty dinnerParty;
 
         public Form1()
