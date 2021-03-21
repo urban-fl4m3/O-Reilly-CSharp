@@ -2,54 +2,57 @@
 {
     class DinnerParty
     {
-        public const int CostOfFoodPerPerson = 25;
-
-        private int NumberOfPeople;
-        decimal CostOfBeveragesPerPerson;
-        decimal CostOfDecorations;
-    
-        public void SetPartyOptions(int people, bool fancy)
+        public int NumberOfPeople { get; set; }
+        public bool FancyDecorations { get; set; }
+        public bool HealthyOptions { get; set; }
+        public decimal Cost
         {
-            NumberOfPeople = people;
-            CalculateCostOfDecorations(fancy);
-        }
-
-        public int GetNumberOfPeople()
-        {
-            return NumberOfPeople;
-        }
-
-        public void SetHealthyOptions(bool option)
-        {
-            if (option)
+            get
             {
-                CostOfBeveragesPerPerson = 5.00M;
+                decimal totalCost = CalculateCostOfDecorations() +
+                    ((CalculateCostOfBeveragesPerson() + costOfFoodPerPerson) * NumberOfPeople);
+
+                totalCost = HealthyOptions ? totalCost *= .95M : totalCost;
+                return totalCost;
+            }
+        }
+
+        private const int costOfFoodPerPerson = 25;
+
+        public DinnerParty(int numberOfPeople, bool healthyOptions, bool fancyDecorations)
+        {
+            NumberOfPeople = numberOfPeople;
+            HealthyOptions = healthyOptions;
+            FancyDecorations = fancyDecorations;
+        }
+
+
+        private decimal CalculateCostOfDecorations()
+        {
+            decimal costOfDecorations;
+            
+            if (FancyDecorations)
+            {
+                costOfDecorations = (NumberOfPeople * 15.00M) + 50M;
             }
             else
             {
-                CostOfBeveragesPerPerson = 20.00M;
+                costOfDecorations = (NumberOfPeople * 7.50M) + 30M;
             }
+
+            return costOfDecorations;
         }
 
-        public void CalculateCostOfDecorations(bool option)
+        private decimal CalculateCostOfBeveragesPerson()
         {
-            if (option)
+            if (HealthyOptions)
             {
-                CostOfDecorations = (NumberOfPeople * 15.00M) + 50M;
+                return 5.00M;
             }
             else
             {
-                CostOfDecorations = (NumberOfPeople * 7.50M) + 30M;
+                return 20.00M;
             }
-        }
-
-        public decimal CalculateCost(bool option)
-        {
-            decimal totalCost = CostOfDecorations +
-                ((CostOfBeveragesPerPerson + CostOfFoodPerPerson) * NumberOfPeople);
-
-            totalCost = option ? totalCost *= .95M : totalCost;
-            return totalCost;
         }
     }
 }
