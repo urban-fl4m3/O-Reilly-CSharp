@@ -17,7 +17,7 @@ namespace Chapter6_Program3
             workers[1] = new Worker(new string[] { "Egg care", "Baby bee tutoring" }, 114);
             workers[2] = new Worker(new string[] { "Hive maintenance", "String patrol"}, 149);
             workers[3] = new Worker(new string[] { "Nectar collector", "Honey manufacturing", "Egg care", 
-                "Baby bee tutoring", "Hive maintenance", "String patrol"}, 155);
+                "Baby bee tutoring", "Hive maintenance", "Sting patrol"}, 155);
 
             queen = new Queen(workers, 275);
         }

@@ -60,7 +60,7 @@ namespace Chapter6_Program3
             "Egg care",
             "Baby bee tutoring",
             "Hive maintenance",
-            "String patrol"});
+            "Sting patrol"});
             this.workerBeeJob.Location = new System.Drawing.Point(16, 62);
             this.workerBeeJob.Name = "workerBeeJob";
             this.workerBeeJob.Size = new System.Drawing.Size(244, 24);
