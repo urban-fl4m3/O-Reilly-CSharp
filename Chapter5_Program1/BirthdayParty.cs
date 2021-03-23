@@ -1,19 +1,14 @@
 ﻿namespace Chapter5_Program1
 {
-    class BirthdayParty
+    class BirthdayParty : Party
     {
-        public const int CostOfFoodPerPerson = 25;
-        public int NumberOfPeople { get; set; }
-        public bool FancyDecorations { get; set; }
         public string CakeWriting { get; set; }
 
-        //page 264
-        public decimal Cost
+        public override decimal Cost
         {
             get
             {
-                decimal totalCost = CalculateCostOfDecorations();
-                totalCost += CostOfFoodPerPerson * NumberOfPeople;
+                decimal totalCost = base.Cost;
                 decimal cakeCost;
                 if (CakeSize() == 8)
                 {
@@ -79,21 +74,6 @@
             {
                 return 40;
             }
-        }
-
-        private decimal CalculateCostOfDecorations()
-        {
-            decimal costOfDecorations;
-            if (FancyDecorations)
-            {
-                costOfDecorations = (NumberOfPeople * 15.0M) + 50M;
-            }
-            else
-            {
-                costOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-            }
-
-            return costOfDecorations;
         }
     }
 }
