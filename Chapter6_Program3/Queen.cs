@@ -1,11 +1,11 @@
 ﻿namespace Chapter6_Program3
 {
-    class Queen
+    class Queen : Bee
     {
         private Worker[] workers;
         private int shiftNumber;
 
-        public Queen(Worker[] workers)
+        public Queen(Worker[] workers, double weight) : base(weight)
         {
             this.workers = workers;
         }
@@ -27,9 +27,12 @@
         {
             shiftNumber++;
             string report = $"Отчёт для смены#{shiftNumber}\r\n";
+            double honeyConsumed = HoneyConsumptionRate();
 
             for (int i = 0; i < workers.Length; i++)
             {
+                honeyConsumed += workers[i].HoneyConsumptionRate();
+
                 if (workers[i].DidYouFinish())
                 {
                     report += $"Рабочий #{i + 1} закончил работу\r\n";
@@ -53,6 +56,9 @@
                     }
                 }
             }
+
+
+            report += $"Total honey consumed for the shift: {honeyConsumed} units";
 
             return report;
         }

@@ -1,6 +1,6 @@
 ﻿namespace Chapter6_Program3
-{
-    class Worker
+{ 
+    class Worker : Bee
     {
         public string CurrentJob { get; private set; }
         
@@ -16,7 +16,7 @@
         private int shiftsToWork;
         private int shiftsWorked;
 
-        public Worker(string[] jobs)
+        public Worker(string[] jobs, double weight) : base(weight)
         {
             jobsICanDo = jobs;
             CurrentJob = string.Empty;
@@ -61,6 +61,11 @@
             }
 
             return false;
+        }
+
+        public override double HoneyConsumptionRate()
+        {
+            return base.HoneyConsumptionRate() + shiftsWorked * 0.65d;
         }
     }
 }
