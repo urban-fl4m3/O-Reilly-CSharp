@@ -1,6 +1,6 @@
 ﻿namespace Chapter6_Program3
 {
-    interface INectarCollector
+    interface INectarCollector : IWorker
     {
         void FindFlowers();
         void GatherNectar();

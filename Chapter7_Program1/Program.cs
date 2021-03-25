@@ -1,14 +1,17 @@
-﻿namespace Chapter7_Program1
+﻿using System;
+
+namespace Chapter7_Program1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            TallGuy tallGuy = new TallGuy() { Height = 74, Name = "Jimmy" };
-            tallGuy.TalkAboutYourself();
-
-            IClown clown = tallGuy;
-            clown.Honk();
+            ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
+            FunnyFunny someFunnyClown = fingersTheClown;
+            IScaryClown someOtherScaryClown = (ScaryScary)someFunnyClown;
+            someOtherScaryClown.Honk();
+            
+            Console.ReadKey();
         }
     }
 }

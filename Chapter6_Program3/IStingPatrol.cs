@@ -1,6 +1,6 @@
 ﻿namespace Chapter6_Program3
 {
-    interface IStingPatrol
+    interface IStingPatrol : IWorker
     {
         int AlertLevel { get; }
         int StingerLength { get; set; }
