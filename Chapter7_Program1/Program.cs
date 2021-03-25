@@ -6,9 +6,7 @@ namespace Chapter7_Program1
     {
         static void Main(string[] args)
         {
-            ScaryScary fingersTheClown = new ScaryScary("big shoes", 14);
-            FunnyFunny someFunnyClown = fingersTheClown;
-            IScaryClown someOtherScaryClown = (ScaryScary)someFunnyClown;
+            IScaryClown someOtherScaryClown = new ScaryScary("big shoes", 14);
             someOtherScaryClown.Honk();
             
             Console.ReadKey();

@@ -4,9 +4,15 @@ namespace Chapter7_Program1
 {
     class FunnyFunny : IClown
     {
-        public string FunnyThingIHave => funnyThing;
+        public string FunnyThingIHave
+        {
+            get
+            {
+                return $"Привет, у меня есть {funnyThing}";
+            }
+        }
 
-        private string funnyThing;
+        protected string funnyThing;
 
         public FunnyFunny(string funnyThing)
         {
@@ -15,7 +21,7 @@ namespace Chapter7_Program1
 
         public void Honk()
         {
-            Console.WriteLine($"Привет, у меня есть {FunnyThingIHave}");
+            Console.WriteLine(FunnyThingIHave);
         }
     }
 }

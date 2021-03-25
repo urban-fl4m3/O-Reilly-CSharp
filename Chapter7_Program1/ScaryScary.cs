@@ -4,7 +4,7 @@ namespace Chapter7_Program1
 {
     class ScaryScary : FunnyFunny, IScaryClown
     {
-        public string ScaryThingIHave => $"{numberOfScaryThings} пауков";
+        public string ScaryThingIHave => $"У меня {numberOfScaryThings} пауков";
 
         private int numberOfScaryThings;
 
@@ -15,7 +15,7 @@ namespace Chapter7_Program1
 
         public void ScareLittleChicken()
         {
-            Console.WriteLine("Ага! Попался!");
+            Console.WriteLine($"Ты не можешь забрать {funnyThing}");
         }
     }
 }
