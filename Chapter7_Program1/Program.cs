@@ -6,6 +6,9 @@
         {
             TallGuy tallGuy = new TallGuy() { Height = 74, Name = "Jimmy" };
             tallGuy.TalkAboutYourself();
+
+            IClown clown = tallGuy;
+            clown.Honk();
         }
     }
 }
