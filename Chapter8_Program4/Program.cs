@@ -21,6 +21,10 @@ namespace Chapter8_Program4
 
             PrintCards(randomCards);
 
+            CardComparer_byValue comparer = new CardComparer_byValue();
+            randomCards.Sort(comparer);
+            PrintCards(randomCards);
+
             Console.ReadKey();
         }
 
