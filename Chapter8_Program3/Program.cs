@@ -18,7 +18,12 @@ namespace Chapter8_Program3
             };
 
             PrintDucks(ducks);
-            DuckComparerBySize comparer = new DuckComparerBySize();
+            DuckComparer comparer = new DuckComparer();
+            comparer.SortBy = SortCriteria.KindThenSize;
+            ducks.Sort(comparer);
+            PrintDucks(ducks);
+
+            comparer.SortBy = SortCriteria.SizeThenKind;
             ducks.Sort(comparer);
             PrintDucks(ducks);
 
