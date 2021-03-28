@@ -40,7 +40,7 @@ namespace Chapter8_Program2
 
             if (shoeCloset.Contains(secondShoe))
             {
-                Console.WriteLine("Удвитиельно!");
+                Console.WriteLine("Удивительно!");
             }
 
             Console.ReadKey();
