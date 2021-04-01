@@ -49,6 +49,7 @@ namespace Chapter8_Program7
             this.listHand.Name = "listHand";
             this.listHand.Size = new System.Drawing.Size(233, 580);
             this.listHand.TabIndex = 0;
+            this.listHand.DoubleClick += new System.EventHandler(this.buttonAsk_Click);
             // 
             // buttonAsk
             // 
