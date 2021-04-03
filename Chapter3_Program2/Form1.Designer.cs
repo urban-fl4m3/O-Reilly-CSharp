@@ -36,6 +36,8 @@ namespace Chapter3_Program2
             this.receiveFromBobButton = new System.Windows.Forms.Button();
             this.joeGivesCashToBobButton = new System.Windows.Forms.Button();
             this.bobGivesCashToJoeButton = new System.Windows.Forms.Button();
+            this.saveJoe = new System.Windows.Forms.Button();
+            this.loadJoe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // joesCashLabel
@@ -105,11 +107,33 @@ namespace Chapter3_Program2
             this.bobGivesCashToJoeButton.UseVisualStyleBackColor = true;
             this.bobGivesCashToJoeButton.Click += new System.EventHandler(this.bobGivesCashToJoeButton_Click);
             // 
+            // saveJoe
+            // 
+            this.saveJoe.Location = new System.Drawing.Point(126, 392);
+            this.saveJoe.Name = "saveJoe";
+            this.saveJoe.Size = new System.Drawing.Size(133, 46);
+            this.saveJoe.TabIndex = 7;
+            this.saveJoe.Text = "Save Joe";
+            this.saveJoe.UseVisualStyleBackColor = true;
+            this.saveJoe.Click += new System.EventHandler(this.saveJoe_Click);
+            // 
+            // loadJoe
+            // 
+            this.loadJoe.Location = new System.Drawing.Point(283, 392);
+            this.loadJoe.Name = "loadJoe";
+            this.loadJoe.Size = new System.Drawing.Size(133, 46);
+            this.loadJoe.TabIndex = 8;
+            this.loadJoe.Text = "Load Joe";
+            this.loadJoe.UseVisualStyleBackColor = true;
+            this.loadJoe.Click += new System.EventHandler(this.loadJoe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(510, 450);
+            this.Controls.Add(this.loadJoe);
+            this.Controls.Add(this.saveJoe);
             this.Controls.Add(this.bobGivesCashToJoeButton);
             this.Controls.Add(this.joeGivesCashToBobButton);
             this.Controls.Add(this.receiveFromBobButton);
@@ -133,6 +157,8 @@ namespace Chapter3_Program2
         private System.Windows.Forms.Button receiveFromBobButton;
         private System.Windows.Forms.Button joeGivesCashToBobButton;
         private System.Windows.Forms.Button bobGivesCashToJoeButton;
+        private System.Windows.Forms.Button saveJoe;
+        private System.Windows.Forms.Button loadJoe;
     }
 }
 

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace Chapter3_Program2
@@ -62,6 +57,25 @@ namespace Chapter3_Program2
         {
             var cash = bob.GiveCash(5);
             joe.ReceiveCash(cash);
+            UpdateForm();
+        }
+
+        private void saveJoe_Click(object sender, EventArgs e)
+        {
+            using (Stream output = File.Create("Guy_File.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(output, joe);
+            }
+        }
+
+        private void loadJoe_Click(object sender, EventArgs e)
+        {
+            using (Stream input = File.OpenRead("Guy_File.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                joe = (Guy)formatter.Deserialize(input);
+            }
             UpdateForm();
         }
     }

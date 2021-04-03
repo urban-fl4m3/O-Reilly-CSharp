@@ -1,7 +1,9 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Chapter3_Program2
 {
+    [Serializable]
     public class Guy
     {
         public readonly string Name;
