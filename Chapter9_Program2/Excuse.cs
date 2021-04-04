@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Chapter9_Program2
 {
+    [Serializable]
     class Excuse
     {
         public string Description { get; set; }
@@ -24,21 +26,26 @@ namespace Chapter9_Program2
         public void OpenFile(string excusePath)
         {
             ExcusePath = excusePath;
-            using (StreamReader reader = new StreamReader(excusePath))
+            Excuse temp;
+
+            using (Stream input = File.OpenRead(excusePath))
             {
-                Description = reader.ReadLine();
-                Results = reader.ReadLine();
-                LastUsed = Convert.ToDateTime(reader.ReadLine());
+                BinaryFormatter bf = new BinaryFormatter();
+                temp = (Excuse)bf.Deserialize(input);
+
             }
+
+            Description = temp.Description;
+            Results = temp.Results;
+            LastUsed = temp.LastUsed;
         }
 
         public void Save(string fileName)
         {
-            using(StreamWriter sw = new StreamWriter(fileName))
+            using (Stream output = File.OpenWrite(fileName))
             {
-                sw.WriteLine(Description);
-                sw.WriteLine(Results);
-                sw.WriteLine(LastUsed);
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(output, this);
             }
         }
     }
