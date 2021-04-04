@@ -19,8 +19,8 @@ namespace Chapter9_Program2
 
         public Excuse(Random random, string folder)
         {
-            string[] fileNames = Directory.GetFiles(folder, "*.txt");
-            OpenFile(fileNames[random.Next(fileNames.Length)));
+            string[] fileNames = Directory.GetFiles(folder, "*.excuse");
+            OpenFile(fileNames[random.Next(fileNames.Length)]);
         }
 
         public void OpenFile(string excusePath)
