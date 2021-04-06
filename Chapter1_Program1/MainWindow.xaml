@@ -13,12 +13,33 @@
                     <ColumnDefinition Width="13*"/>
                     <ColumnDefinition Width="14*"/>
                 </Grid.ColumnDefinitions>
-                <Ellipse Fill="Red" Height="80" 
-                         Stroke="Black" Width="80" Grid.ColumnSpan="2" />
+                <Ellipse Fill="Gray" Height="80" 
+                         Stroke="Black" Width="65" Grid.ColumnSpan="2" />
+                <Ellipse Grid.ColumnSpan="2" Fill="Black" HorizontalAlignment="Center" Height="35"
+                         Margin="40,20,70,0" Stroke="Black" VerticalAlignment="Top" Width="25" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="10"/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
+                <Ellipse Grid.Column="0" Fill="Black" HorizontalAlignment="Center" Height="35" Margin="70,20,40,0" Stroke="Black" VerticalAlignment="Top" Width="25" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-10"/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                </Ellipse>
             </Grid>
         </ControlTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"/>
             <ColumnDefinition/>
@@ -40,7 +61,7 @@
         </StackPanel>
 
         <Canvas x:Name="playArea" Grid.ColumnSpan="3" Grid.Row="1" HorizontalAlignment="Stretch" 
-                VerticalAlignment="Stretch">
+                VerticalAlignment="Stretch" Margin="10,0,-10.4,0" MouseMove="playArea_MouseMove" MouseLeave="playArea_MouseLeave">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0068FF" Offset="0.026"/>
@@ -49,13 +70,13 @@
                     <GradientStop Color="#FF1FCCC3" Offset="0.406"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Orientation="Vertical">
+            <StackPanel x:Name="human" Orientation="Vertical" MouseDown="human_MouseDown">
                 <Ellipse Fill="White" Height="10" Width="10" Stroke="Black"/>
                 <Rectangle Fill="White" Height="25" Width="10" Stroke="Black"/>
             </StackPanel>
             <TextBlock x:Name="gameOverText" FontSize="100" FontFamily="Arial Black" TextWrapping="Wrap" Text="Game Over"
                        FontWeight="Bold" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle x:Name="target" Height="50" Canvas.Left="685" Stroke="Black" Canvas.Top="34" Width="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="target" Height="50" Canvas.Left="685" Stroke="Black" Canvas.Top="34" Width="50" RenderTransformOrigin="0.5,0.5" MouseEnter="target_MouseEnter">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
